@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Member Details</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>ID Number</th>
+            <th>Phone Number</th>
+            <th>Program of Study</th>
+            <th>Department</th>
+            <th>Membership</th>
+            <th>Membership Start Date</th>
+            <th>Membership End Date</th>
+            <th>Subscribed</th> <!-- New column for Subscribed status -->
+        </tr>
+        {% for member in members %}
+        <tr>
+            <td>{{ member['Name'] }}</td>
+            <td>{{ member['Surname'] }}</td>
+            <td>{{ member['ID Number'] }}</td>
+            <td>{{ member['Phone Number'] }}</td>
+            <td>{{ member['Program of Study'] }}</td>
+            <td>{{ member['Department'] }}</td>
+            <td>{{ member['Membership'] }}</td>
+            <td>{{ member['Membership Start Date'] }}</td>
+            <td>{{ member['Membership End Date'] }}</td>
+            <td>{{ member['Subscribed'] }}</td> <!-- Displaying the Subscribed status -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
